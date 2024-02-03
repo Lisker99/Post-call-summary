@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streem Call Summary</title>
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        body {
+            width: 350px;
+            height: auto;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            white-space: normal;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Post-Call Summary</h1>
+    <form id="summaryForm">
+        <div>
+            <label for="memberName">Member Name:</label>
+            <input type="text" id="memberName" required>
+        </div>
+        <div>
+            <label for="item">Item:</label>
+            <textarea id="item" placeholder="You called in today about..." required></textarea>
+        </div>
+        <div>
+            <label for="diagnosis">Diagnosis:</label>
+            <textarea id="diagnosis" placeholder="With your help, we were able to..." required></textarea>
+        </div>
+        <div>
+            <label for="nextSteps">Are there next steps?</label>
+            <select id="nextSteps" required>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>                
+            </select>
+        </div>
+        <div id="nextStepsContainer" style="display:none;">
+            <textarea id="nextStepsDetails" placeholder="Describe next steps..." required></textarea>
+        </div>
+        <div>
+            <label for="partsNeeded">Are parts needed?</label>
+            <select id="partsNeeded" required>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div id="partsNeededContainer" style="display:none;">
+            <textarea id="partsList" placeholder="List the needed parts..." required></textarea>
+        </div>
+        <div>
+            <label for="unlimitedMember">Were they an Unlimited Member?</label>
+            <select id="unlimitedMember" required>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <button type="button" id="submitForm">Submit</button>
+    </form>
+    <script src="popup.js"></script>
+</body>
+</html>
